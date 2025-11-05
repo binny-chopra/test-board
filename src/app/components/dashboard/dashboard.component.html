@@ -1,0 +1,22 @@
+<div class="container my-5">
+    <h2 class="text-2xl font-bold text-primary mb-4">Dashboard Overview</h2>
+    <div *ngIf="data">
+        <div class="card mb-3 p-3">
+            <h4>User</h4>
+            <p>Name: {{ data.user.firstName }} {{ data.user.lastName }}</p>
+        </div>
+        <div class="card mb-3 p-3">
+            <h4>Top Products</h4>
+            <ul>
+                <li *ngFor="let p of data.products.products">{{ p.title }}</li>
+            </ul>
+        </div>
+        <div class="card p-3">
+            <h4>Headlines</h4>
+            <ul>
+                <li *ngFor="let n of data.news.articles">{{ n.title }}</li>
+            </ul>
+        </div>
+    </div>
+    <div *ngIf="!data" class="text-center text-gray-500"> Loading data… </div>
+</div>
