@@ -1,0 +1,22 @@
+<div class="container my-4">
+    <h3>Products</h3>
+
+    <button class="btn btn-outline-primary me-2" (click)="store.setFilter('smartphones')">
+        Smartphones
+    </button>
+    <button class="btn btn-outline-primary me-2" (click)="store.setFilter('beauty')">
+        Beauty
+    </button>
+    <button class="btn btn-outline-primary me-2" (click)="store.setFilter('laptops')">
+        Laptops
+    </button>
+    <button class="btn btn-outline-secondary" (click)="store.setFilter('')">
+        All
+    </button>
+
+    <ul class="mt-3" *ngIf="store.filteredProducts() as products">
+        <li *ngFor="let p of products; trackBy: trackById">
+            {{ p.title }}
+        </li>
+    </ul>
+</div>

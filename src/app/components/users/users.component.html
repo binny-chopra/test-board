@@ -1,0 +1,20 @@
+<h1 class="m-5" *ngIf="!data">Loading...</h1>
+
+<table *ngIf="data" class="table-auto border-collapse border border-gray-300 m-5 w-75 text-left">
+    <thead class="bg-gray-100">
+        <tr>
+            <th class="border border-gray-300 px-4 py-2">Username</th>
+            <th class="border border-gray-300 px-4 py-2">Email</th>
+            <th class="border border-gray-300 px-4 py-2">Company</th>
+            <th class="border border-gray-300 px-4 py-2 text-center">Post Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let element of data" class="hover:bg-gray-50">
+            <td class="border border-gray-300 px-4 py-2">{{ element.username }}</td>
+            <td class="border border-gray-300 px-4 py-2">{{ element.email }}</td>
+            <td class="border border-gray-300 px-4 py-2">{{ element.company }}</td>
+            <td class="border border-gray-300 px-4 py-2 text-center">{{ element.postCount }}</td>
+        </tr>
+    </tbody>
+</table>
